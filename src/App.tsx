@@ -1,25 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import { HandleOnChangeInterface } from './commonInterface';
+import Form from './Form';
+import List from './list';
 
-class App extends Component {
+
+interface props {};
+interface state {
+  text: string,
+  list: Array<any>
+};
+
+class App extends React.Component<props, state> {
+
+  state: Readonly<state> = {
+    text: '',
+    list: [],
+  };
+
+  onChange = (e: HandleOnChangeInterface) => {
+    this.setState({ text: e.target.value});
+  }
+
+  saveTodo = () => {
+    const { list, text } = this.state;
+    if(text !== '') {
+      list.push({ text, selected: false });
+      this.setState({ text: '', list: [...list] });
+    }
+  }
+
+  selectTodo = (index: number) => {
+    const { list } = this.state;
+    const todo = list[index];
+    todo.selected = !todo.selected;
+    list[index] = {...todo};
+    this.setState({ list });
+  }
+
   render() {
+    var { text, list } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Todo app</h1>
+        <Form 
+          text={text}
+          onChange={this.onChange}
+          onClick={this.saveTodo}
+        />
+        <List 
+          list={list}
+          onClick={this.selectTodo}
+        />
       </div>
     );
   }
