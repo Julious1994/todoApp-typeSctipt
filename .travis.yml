@@ -5,8 +5,8 @@ cache:
   directories:
   - node_modules
 script:
-  - npm test
-  - npm run build
+  - npm run lint
+  - npm test -- -u
 deploy:
   provider: pages
   skip_cleanup: true
