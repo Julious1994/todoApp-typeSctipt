@@ -11,8 +11,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  user: "Julious1994"
-  password: "Jel@1994"
-  local_dir: build
+  github_token: fdfca1e9c5ac9890286adb6efd80e715993c23d1
+  keep-history: true
   on:
     branch: master
