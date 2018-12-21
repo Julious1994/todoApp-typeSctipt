@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import App from './App';
 
 let wrapper: any;
+let todo = { text: 'Test' };
 beforeEach(() => {
   wrapper = shallow(<App />);
 })
@@ -18,12 +19,12 @@ it('should render Todo App', () => {
 it('should change text input', () => {
   const form = wrapper.find('Form').at(0);
   form.props().onChange({ target: { value: 'Test'}});
-  expect(wrapper.state().text).toBe('Test');
+  expect(wrapper.state().todo.text).toBe('Test');
 });
 
 it('should save todo', () => {
   const form = wrapper.find('Form').at(0);
-  wrapper.setState({ text: "Test"});
+  wrapper.setState({ todo });
   form.props().onClick();
   expect(wrapper.state().list.length).toBe(1);
 });

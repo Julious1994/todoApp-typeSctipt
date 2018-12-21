@@ -7,26 +7,32 @@ import List from './list';
 
 interface props {};
 interface state {
-  text: string,
+  todo: {
+    text: string,
+    selected?: boolean,
+  },
   list: Array<any>
 };
 
 class App extends React.Component<props, state> {
 
   state: Readonly<state> = {
-    text: '',
+    todo: { text: '' },
     list: [],
   };
 
   onChange = (e: HandleOnChangeInterface) => {
-    this.setState({ text: e.target.value});
+    const { todo } = this.state;
+    todo.text = e.target.value;
+    this.setState({ todo });
   }
 
   saveTodo = () => {
-    const { list, text } = this.state;
-    if(text !== '') {
-      list.push({ text, selected: false });
-      this.setState({ text: '', list: [...list] });
+    const { list, todo } = this.state;
+    if(todo.text !== '') {
+      list.push({ ...todo, selected: false });
+      todo.text = '';
+      this.setState({ todo: {...todo}, list: [...list] });
     }
   }
 
@@ -39,12 +45,12 @@ class App extends React.Component<props, state> {
   }
 
   render() {
-    var { text, list } = this.state;
+    var { todo, list } = this.state;
     return (
       <div className="App">
         <h1>Todo app</h1>
         <Form 
-          text={text}
+          todo={todo}
           onChange={this.onChange}
           onClick={this.saveTodo}
         />
