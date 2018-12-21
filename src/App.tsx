@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import { HandleOnChangeInterface } from './commonInterface';
+import HandleOnChangeInterface from './commonInterface';
 import Form from './Form';
 import List from './list';
 
@@ -49,12 +49,12 @@ class App extends React.Component<props, state> {
     return (
       <div className="App">
         <h1>Todo app</h1>
-        <Form 
+        <Form
           todo={todo}
           onChange={this.onChange}
           onClick={this.saveTodo}
         />
-        <List 
+        <List
           list={list}
           onClick={this.selectTodo}
         />
