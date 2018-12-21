@@ -8,5 +8,9 @@ script:
   - npm test
   - npm run build
 on:
+<<<<<<< HEAD
   branch: master
   
+=======
+  branch: master
+>>>>>>> bfc8225197b125b5e31d4b1ee18150cef5071ba2
