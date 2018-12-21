@@ -1,0 +1,20 @@
+{
+    "extends": "airbnb",
+    "parser": "typescript-eslint-parser",
+    "env": {
+      "jest": true
+    },
+    "rules": {
+      "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".ts",
+            ".tsx"
+          ]
+        }
+      }
+    }
+}
