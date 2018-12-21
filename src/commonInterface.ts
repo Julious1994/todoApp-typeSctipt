@@ -1,6 +1,6 @@
-import React from 'react';
+/* global HandleOnChangeInterface */
+interface HandleOnChangeInterface {
+  target: HTMLInputElement,
+}
 
-export interface HandleOnChangeInterface {
-    target: HTMLInputElement,
-};
-
+export default HandleOnChangeInterface;
