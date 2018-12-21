@@ -7,6 +7,11 @@ ShallowWrapper {
     onChange={[MockFunction]}
     onClick={[MockFunction]}
     text=""
+    todo={
+      Object {
+        "text": "",
+      }
+    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
