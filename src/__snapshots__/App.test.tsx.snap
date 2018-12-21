@@ -24,7 +24,11 @@ ShallowWrapper {
         <Form
           onChange={[Function]}
           onClick={[Function]}
-          text=""
+          todo={
+            Object {
+              "text": "",
+            }
+          }
         />,
         <List
           list={Array []}
@@ -53,7 +57,9 @@ ShallowWrapper {
         "props": Object {
           "onChange": [Function],
           "onClick": [Function],
-          "text": "",
+          "todo": Object {
+            "text": "",
+          },
         },
         "ref": null,
         "rendered": null,
@@ -87,7 +93,11 @@ ShallowWrapper {
           <Form
             onChange={[Function]}
             onClick={[Function]}
-            text=""
+            todo={
+              Object {
+                "text": "",
+              }
+            }
           />,
           <List
             list={Array []}
@@ -116,7 +126,9 @@ ShallowWrapper {
           "props": Object {
             "onChange": [Function],
             "onClick": [Function],
-            "text": "",
+            "todo": Object {
+              "text": "",
+            },
           },
           "ref": null,
           "rendered": null,
