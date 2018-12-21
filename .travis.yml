@@ -8,10 +8,10 @@ script:
   - npm run lint
   - npm test -- -u
   - npm run build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: fdfca1e9c5ac9890286adb6efd80e715993c23d1
-  keep-history: true
-  on:
-    branch: master
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: fdfca1e9c5ac9890286adb6efd80e715993c23d1
+#   keep-history: true
+#   on:
+#     branch: master
